@@ -1,0 +1,7 @@
+# Archivo Doxyfile mínimo para generar documentación
+PROJECT_NAME = "Practica2_ED"
+OUTPUT_DIRECTORY = html
+GENERATE_HTML = YES
+INPUT = ../include
+RECURSIVE = NO
+QUIET = YES

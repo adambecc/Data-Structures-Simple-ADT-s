@@ -7,7 +7,7 @@ DATOS = datos
 
 # Archivos fuente
 CPP = $(SRC)/main.cpp $(SRC)/evento.cpp $(SRC)/agendaeventos.cpp
-OBJ = $(patsubst $(SRC)/ %.cpp,$(OBJDIR)/ %.o,$(CPP))
+OBJ = $(patsubst $(SRC)/%.cpp,$(OBJDIR)/%.o,$(CPP))
 
 # Compilador y opciones
 CXX = g++
@@ -16,13 +16,12 @@ CXXFLAGS = -Wall -std=c++11 -I$(INC)
 # Ejecutable
 TARGET = programa
 
-# Regla principal
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJ)
 
-$(OBJDIR)/ %.o: $(SRC)/ %.cpp | $(OBJDIR)
+$(OBJDIR)/%.o: $(SRC)/%.cpp | $(OBJDIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(OBJDIR):
@@ -33,3 +32,5 @@ clean:
 
 doc:
 	doxygen $(DOC)/Doxyfile
+
+.PHONY: all clean doc
