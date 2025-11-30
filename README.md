@@ -4,17 +4,17 @@
 
 ---
 
-## 📋 Descripción
-
-Programa de gestión de eventos utilizando **TDA's** (Tipo de Datos Abstracto) desarrollado en C++. 
-
 ## ⚠️ Disclaimer
 
 Se ha hecho uso de la inteligencia artificial para:
-    - El proceso de debuggin
-    - Mejor muestreo del codigo por consola
-    - Mejorar visualmente la documentacion por medio de Doxygen
-    - Mejorar visualmente el README.md del proyecto
+- El proceso de debuggin
+- Mejor muestreo del codigo por consola
+- Mejorar visualmente la documentacion por medio de Doxygen
+- Mejorar visualmente el README.md del proyecto
+
+## 📋 Descripción
+
+Programa de gestión de eventos utilizando **TDA's** (Tipo de Datos Abstracto) desarrollado en C++. 
 
 El sistema permite:
 - ✅ Añadir eventos con validación automática
