@@ -26,11 +26,9 @@ El sistema permite:
 - ✅ Cargar eventos desde archivo txt
 
 **Características destacadas:**
-- 🚫 **Prevención de solapamientos**: No permite añadir eventos que coincidan en tiempo
 - 💾 **Persistencia**: Carga automática de eventos desde archivo al iniciar
 - 🎨 **Interfaz amigable**: Menú interactivo con banner ASCII art
 - 📊 **Detección de conflictos**: Identifica todos los pares de eventos solapados
-- ⚡ **Eficiencia**: Operaciones optimizadas con análisis de complejidad documentado
 
 ---
 
