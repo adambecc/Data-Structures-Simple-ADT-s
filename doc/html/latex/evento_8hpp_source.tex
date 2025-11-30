@@ -1,0 +1,53 @@
+\doxysection{evento.\+hpp}
+\hypertarget{evento_8hpp_source}{}\label{evento_8hpp_source}\index{/home/adambecc/Escritorio/ED/P2/Data-\/Structures-\/Simple-\/ADT-\/s/include/evento.hpp@{/home/adambecc/Escritorio/ED/P2/Data-\/Structures-\/Simple-\/ADT-\/s/include/evento.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EVENTO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EVENTO\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEvento}{Evento}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEvento_a7aba3bd7a832c5365ea0ccb318511452}{Evento}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEvento_a0fb40d4090d94dcf01c46e278538868b}{Evento}}(\textcolor{keyword}{const}\ std::string\ \&nombre,\ \textcolor{keywordtype}{int}\ dia,\ \textcolor{keywordtype}{double}\ inicio,\ \textcolor{keywordtype}{double}\ fin);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//getters}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ std::string\ obtenerNombre()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ obtenerDia()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ obtenerHoraInicio()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ obtenerHoraFin()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{comment}{//setters\ (precondiciones\ documentadas\ en\ .cpp)}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ cambiarNombre(\textcolor{keyword}{const}\ std::string\ \&nuevo);}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ cambiarDia(\textcolor{keywordtype}{int}\ dia);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ cambiarHoraInicio(\textcolor{keywordtype}{double}\ h);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ cambiarHoraFin(\textcolor{keywordtype}{double}\ h);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEvento_ae9d9f02305083f2a2d8bf2bd5658243d}{seSolapaCon}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classEvento}{Evento}}\ \&otro)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEvento_a7a353513d5faee561a0e12c933eaffe7}{mostrar}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEvento_a222b1018226512d42ae52983ed958c19}{esValido}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::string\ nombre\_;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ dia\_;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ hora\_inicio\_;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ hora\_fin\_;}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EVENTO\_H}}
+
+\end{DoxyCode}

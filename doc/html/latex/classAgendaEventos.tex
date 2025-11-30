@@ -1,0 +1,94 @@
+\doxysection{Agenda\+Eventos Class Reference}
+\hypertarget{classAgendaEventos}{}\label{classAgendaEventos}\index{AgendaEventos@{AgendaEventos}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAgendaEventos_a59e4ceee6dddee7289cd09db4ab1a862}\label{classAgendaEventos_a59e4ceee6dddee7289cd09db4ab1a862} 
+{\bfseries Agenda\+Eventos} ()
+\begin{DoxyCompactList}\small\item\em Constructor vacío. \end{DoxyCompactList}\item 
+\Hypertarget{classAgendaEventos_af8dafeacfe0661b892164446008470fd}\label{classAgendaEventos_af8dafeacfe0661b892164446008470fd} 
+{\bfseries Agenda\+Eventos} (const std\+::string \&ruta\+\_\+fichero)
+\begin{DoxyCompactList}\small\item\em Constructor que carga desde fichero. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAgendaEventos_a51549b323331e785fd373c8ea40a3fa3}{anadir\+Evento}} (const \mbox{\hyperlink{classEvento}{Evento}} \&e)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAgendaEventos_ae42c55ccc20a489aec72d1a54746f450}{eliminar\+Evento\+Por\+Nombre}} (const std\+::string \&nombre)
+\begin{DoxyCompactList}\small\item\em Elimina el primer evento cuyo nombre coincida exactamente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAgendaEventos_a3a8fd142ab467518cdedb888ecb2e555}{vaciar\+Agenda}} ()
+\begin{DoxyCompactList}\small\item\em Elimina todos los eventos de la agenda (reset) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAgendaEventos_a7efc5ace989c74ed5a74072c60bb3957}{modificar\+Evento\+Por\+Nombre}} (const std\+::string \&nombre, const \mbox{\hyperlink{classEvento}{Evento}} \&nuevo)
+\begin{DoxyCompactList}\small\item\em Encuentra un elemento por su nombre, y modifica el nombre, dia y horas del mismo. \end{DoxyCompactList}\item 
+\Hypertarget{classAgendaEventos_a43e250ca9fc42fd43ec2bd62667015a2}\label{classAgendaEventos_a43e250ca9fc42fd43ec2bd62667015a2} 
+int {\bfseries buscar\+Eventos\+Por\+Nombre} (const std\+::string \&nombre) const
+\begin{DoxyCompactList}\small\item\em Busca y muestra todos los eventos con nombre exacto. \end{DoxyCompactList}\item 
+\Hypertarget{classAgendaEventos_ac5fd6bfe52ac9ae3d65a10021b4d22b3}\label{classAgendaEventos_ac5fd6bfe52ac9ae3d65a10021b4d22b3} 
+int {\bfseries buscar\+Eventos\+Por\+Dia} (int dia) const
+\begin{DoxyCompactList}\small\item\em Busca y muestra todos los eventos en un día dado. \end{DoxyCompactList}\item 
+\Hypertarget{classAgendaEventos_a08417390b560f2a3c022d8ff227e416e}\label{classAgendaEventos_a08417390b560f2a3c022d8ff227e416e} 
+void {\bfseries mostrar\+Todos} () const
+\begin{DoxyCompactList}\small\item\em Muestra todos los eventos almacenados. \end{DoxyCompactList}\item 
+\Hypertarget{classAgendaEventos_aa8bab65cdf3e127decba046f321acaf0}\label{classAgendaEventos_aa8bab65cdf3e127decba046f321acaf0} 
+void {\bfseries detectar\+Conflictos} () const
+\begin{DoxyCompactList}\small\item\em Detecta e imprime conflictos (pares de eventos que se solapan) \end{DoxyCompactList}\item 
+\Hypertarget{classAgendaEventos_a957f28a1974fe90afee6d0ce161fff4a}\label{classAgendaEventos_a957f28a1974fe90afee6d0ce161fff4a} 
+int {\bfseries numero\+Eventos} () const
+\begin{DoxyCompactList}\small\item\em Devuelve número de eventos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAgendaEventos_a51549b323331e785fd373c8ea40a3fa3}\label{classAgendaEventos_a51549b323331e785fd373c8ea40a3fa3} 
+\index{AgendaEventos@{AgendaEventos}!anadirEvento@{anadirEvento}}
+\index{anadirEvento@{anadirEvento}!AgendaEventos@{AgendaEventos}}
+\doxysubsubsection{\texorpdfstring{anadirEvento()}{anadirEvento()}}
+{\footnotesize\ttfamily bool Agenda\+Eventos\+::anadir\+Evento (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvento}{Evento}} \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Añade un evento si no solapa con los existentes. \begin{DoxyReturn}{Returns}
+true si se añadió, false si hubo solapamiento o error 
+\end{DoxyReturn}
+\Hypertarget{classAgendaEventos_ae42c55ccc20a489aec72d1a54746f450}\label{classAgendaEventos_ae42c55ccc20a489aec72d1a54746f450} 
+\index{AgendaEventos@{AgendaEventos}!eliminarEventoPorNombre@{eliminarEventoPorNombre}}
+\index{eliminarEventoPorNombre@{eliminarEventoPorNombre}!AgendaEventos@{AgendaEventos}}
+\doxysubsubsection{\texorpdfstring{eliminarEventoPorNombre()}{eliminarEventoPorNombre()}}
+{\footnotesize\ttfamily bool Agenda\+Eventos\+::eliminar\+Evento\+Por\+Nombre (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nombre }\end{DoxyParamCaption})}
+
+
+
+Elimina el primer evento cuyo nombre coincida exactamente. 
+
+\begin{DoxyReturn}{Returns}
+true si se eliminó, false si no se encontró 
+\end{DoxyReturn}
+\Hypertarget{classAgendaEventos_a7efc5ace989c74ed5a74072c60bb3957}\label{classAgendaEventos_a7efc5ace989c74ed5a74072c60bb3957} 
+\index{AgendaEventos@{AgendaEventos}!modificarEventoPorNombre@{modificarEventoPorNombre}}
+\index{modificarEventoPorNombre@{modificarEventoPorNombre}!AgendaEventos@{AgendaEventos}}
+\doxysubsubsection{\texorpdfstring{modificarEventoPorNombre()}{modificarEventoPorNombre()}}
+{\footnotesize\ttfamily bool Agenda\+Eventos\+::modificar\+Evento\+Por\+Nombre (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nombre,  }\item[{const \mbox{\hyperlink{classEvento}{Evento}} \&}]{nuevo }\end{DoxyParamCaption})}
+
+
+
+Encuentra un elemento por su nombre, y modifica el nombre, dia y horas del mismo. 
+
+\begin{DoxyReturn}{Returns}
+true si se modifica correctamente, false si no se encontró, o algun formato no se acepta 
+\end{DoxyReturn}
+\Hypertarget{classAgendaEventos_a3a8fd142ab467518cdedb888ecb2e555}\label{classAgendaEventos_a3a8fd142ab467518cdedb888ecb2e555} 
+\index{AgendaEventos@{AgendaEventos}!vaciarAgenda@{vaciarAgenda}}
+\index{vaciarAgenda@{vaciarAgenda}!AgendaEventos@{AgendaEventos}}
+\doxysubsubsection{\texorpdfstring{vaciarAgenda()}{vaciarAgenda()}}
+{\footnotesize\ttfamily void Agenda\+Eventos\+::vaciar\+Agenda (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Elimina todos los eventos de la agenda (reset) 
+
+\begin{DoxyReturn}{Returns}
+true si se eliminó, false si no se pudo eliminar 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/adambecc/\+Escritorio/\+ED/\+P2/\+Data-\/\+Structures-\/\+Simple-\/\+ADT-\/s/include/agendaeventos.\+hpp\end{DoxyCompactItemize}

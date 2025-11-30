@@ -1,7 +1,128 @@
-# Archivo Doxyfile mínimo para generar documentación
-PROJECT_NAME = "Practica2_ED"
-OUTPUT_DIRECTORY = html
-GENERATE_HTML = YES
-INPUT = ../include
-RECURSIVE = NO
-QUIET = YES
+# Doxyfile para Agenda de Eventos
+# Configuración básica para generar documentación HTML y LaTeX
+
+#---------------------------------------------------------------------------
+# Configuración del proyecto
+#---------------------------------------------------------------------------
+PROJECT_NAME           = "Agenda de Eventos"
+PROJECT_NUMBER         = "1.0"
+PROJECT_BRIEF          = "Sistema de gestión de eventos con detección de conflictos"
+OUTPUT_DIRECTORY       = ./docs
+CREATE_SUBDIRS         = NO
+OUTPUT_LANGUAGE        = Spanish
+
+#---------------------------------------------------------------------------
+# Configuración de construcción
+#---------------------------------------------------------------------------
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+#---------------------------------------------------------------------------
+# Configuración de entrada
+#---------------------------------------------------------------------------
+INPUT                  = ./src \
+                         ./include
+FILE_PATTERNS          = *.cpp \
+                         *.hpp \
+                         *.h
+RECURSIVE              = YES
+EXCLUDE_PATTERNS       = */build/* \
+                         */docs/*
+
+#---------------------------------------------------------------------------
+# Configuración de generación HTML
+#---------------------------------------------------------------------------
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+HTML_COLORSTYLE_HUE    = 220
+HTML_COLORSTYLE_SAT    = 100
+HTML_COLORSTYLE_GAMMA  = 80
+HTML_TIMESTAMP         = YES
+HTML_DYNAMIC_SECTIONS  = YES
+
+#---------------------------------------------------------------------------
+# Configuración de generación LaTeX (PDF)
+#---------------------------------------------------------------------------
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
+PDF_HYPERLINKS         = YES
+USE_PDFLATEX           = YES
+LATEX_BATCHMODE        = NO
+
+#---------------------------------------------------------------------------
+# Configuración de diagramas
+#---------------------------------------------------------------------------
+HAVE_DOT               = YES
+CLASS_DIAGRAMS         = YES
+COLLABORATION_GRAPH    = YES
+GROUP_GRAPHS           = YES
+UML_LOOK               = YES
+TEMPLATE_RELATIONS     = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = YES
+DOT_IMAGE_FORMAT       = png
+INTERACTIVE_SVG        = YES
+DOT_GRAPH_MAX_NODES    = 50
+MAX_DOT_GRAPH_DEPTH    = 0
+
+#---------------------------------------------------------------------------
+# Configuración de optimización
+#---------------------------------------------------------------------------
+OPTIMIZE_OUTPUT_FOR_C  = NO
+OPTIMIZE_OUTPUT_JAVA   = NO
+BUILTIN_STL_SUPPORT    = YES
+CPP_CLI_SUPPORT        = NO
+
+#---------------------------------------------------------------------------
+# Configuración de warnings
+#---------------------------------------------------------------------------
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = YES
+
+#---------------------------------------------------------------------------
+# Configuración de formato
+#---------------------------------------------------------------------------
+BRIEF_MEMBER_DESC      = YES
+REPEAT_BRIEF           = YES
+ALWAYS_DETAILED_SEC    = NO
+INLINE_INHERITED_MEMB  = YES
+FULL_PATH_NAMES        = YES
+SHORT_NAMES            = NO
+JAVADOC_AUTOBRIEF      = YES
+QT_AUTOBRIEF           = NO
+MULTILINE_CPP_IS_BRIEF = NO
+
+#---------------------------------------------------------------------------
+# Configuración de referencias cruzadas
+#---------------------------------------------------------------------------
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+REFERENCES_LINK_SOURCE = YES
+VERBATIM_HEADERS       = YES
+
+#---------------------------------------------------------------------------
+# Configuración de índices
+#---------------------------------------------------------------------------
+ALPHABETICAL_INDEX     = YES
+COLS_IN_ALPHA_INDEX    = 5
+IGNORE_PREFIX          = 
+
+#---------------------------------------------------------------------------
+# Opciones adicionales
+#---------------------------------------------------------------------------
+GENERATE_TREEVIEW      = YES
+ENUM_VALUES_PER_LINE   = 4
+GENERATE_LEGEND        = YES
+DOT_CLEANUP            = YES

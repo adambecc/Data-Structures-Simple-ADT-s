@@ -1,0 +1,69 @@
+\doxysection{Evento Class Reference}
+\hypertarget{classEvento}{}\label{classEvento}\index{Evento@{Evento}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEvento_a7aba3bd7a832c5365ea0ccb318511452}\label{classEvento_a7aba3bd7a832c5365ea0ccb318511452} 
+{\bfseries Evento} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto (evento inválido hasta asignar valores) \end{DoxyCompactList}\item 
+\Hypertarget{classEvento_a0fb40d4090d94dcf01c46e278538868b}\label{classEvento_a0fb40d4090d94dcf01c46e278538868b} 
+{\bfseries Evento} (const std\+::string \&nombre, int dia, double inicio, double fin)
+\begin{DoxyCompactList}\small\item\em Constructor por parámetros. \end{DoxyCompactList}\item 
+\Hypertarget{classEvento_a7920bb63b83a891f8f59c4ecab07e1a1}\label{classEvento_a7920bb63b83a891f8f59c4ecab07e1a1} 
+std\+::string {\bfseries obtener\+Nombre} () const
+\item 
+\Hypertarget{classEvento_a01da34e1e81e6a49a779f6c90c252042}\label{classEvento_a01da34e1e81e6a49a779f6c90c252042} 
+int {\bfseries obtener\+Dia} () const
+\item 
+\Hypertarget{classEvento_a67bcdc6201960fdf9fe96e726eae5d87}\label{classEvento_a67bcdc6201960fdf9fe96e726eae5d87} 
+double {\bfseries obtener\+Hora\+Inicio} () const
+\item 
+\Hypertarget{classEvento_a8d4875bf55adcadf4c7d973aae2bbc9d}\label{classEvento_a8d4875bf55adcadf4c7d973aae2bbc9d} 
+double {\bfseries obtener\+Hora\+Fin} () const
+\item 
+\Hypertarget{classEvento_a1b962ab681494b9d3107e71b41ff75a2}\label{classEvento_a1b962ab681494b9d3107e71b41ff75a2} 
+void {\bfseries cambiar\+Nombre} (const std\+::string \&nuevo)
+\item 
+\Hypertarget{classEvento_a8a719aa7d2e2a1dd55f46d2b8fb57903}\label{classEvento_a8a719aa7d2e2a1dd55f46d2b8fb57903} 
+void {\bfseries cambiar\+Dia} (int dia)
+\item 
+\Hypertarget{classEvento_ada655b6e8eee8fcc250d7a08cd752512}\label{classEvento_ada655b6e8eee8fcc250d7a08cd752512} 
+void {\bfseries cambiar\+Hora\+Inicio} (double h)
+\item 
+\Hypertarget{classEvento_ae0f4db49befbeb887aa32ff55a5d8574}\label{classEvento_ae0f4db49befbeb887aa32ff55a5d8574} 
+void {\bfseries cambiar\+Hora\+Fin} (double h)
+\item 
+bool \mbox{\hyperlink{classEvento_ae9d9f02305083f2a2d8bf2bd5658243d}{se\+Solapa\+Con}} (const \mbox{\hyperlink{classEvento}{Evento}} \&otro) const
+\begin{DoxyCompactList}\small\item\em Comprueba si este evento se solapa con otro. \end{DoxyCompactList}\item 
+\Hypertarget{classEvento_a7a353513d5faee561a0e12c933eaffe7}\label{classEvento_a7a353513d5faee561a0e12c933eaffe7} 
+void {\bfseries mostrar} () const
+\begin{DoxyCompactList}\small\item\em Mostrar información (formato legible) \end{DoxyCompactList}\item 
+\Hypertarget{classEvento_a222b1018226512d42ae52983ed958c19}\label{classEvento_a222b1018226512d42ae52983ed958c19} 
+bool {\bfseries es\+Valido} () const
+\begin{DoxyCompactList}\small\item\em Comprueba si el evento es válido según el invariante. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEvento_ae9d9f02305083f2a2d8bf2bd5658243d}\label{classEvento_ae9d9f02305083f2a2d8bf2bd5658243d} 
+\index{Evento@{Evento}!seSolapaCon@{seSolapaCon}}
+\index{seSolapaCon@{seSolapaCon}!Evento@{Evento}}
+\doxysubsubsection{\texorpdfstring{seSolapaCon()}{seSolapaCon()}}
+{\footnotesize\ttfamily bool Evento\+::se\+Solapa\+Con (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classEvento}{Evento}} \&}]{otro }\end{DoxyParamCaption}) const}
+
+
+
+Comprueba si este evento se solapa con otro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em otro} & \doxylink{classEvento}{Evento} a comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si se solapan (mismo dia y franjas horarias intersectan) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/adambecc/\+Escritorio/\+ED/\+P2/\+Data-\/\+Structures-\/\+Simple-\/\+ADT-\/s/include/evento.\+hpp\end{DoxyCompactItemize}

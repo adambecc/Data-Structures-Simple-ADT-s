@@ -1,0 +1,61 @@
+\doxysection{agendaeventos.\+hpp}
+\hypertarget{agendaeventos_8hpp_source}{}\label{agendaeventos_8hpp_source}\index{/home/adambecc/Escritorio/ED/P2/Data-\/Structures-\/Simple-\/ADT-\/s/include/agendaeventos.hpp@{/home/adambecc/Escritorio/ED/P2/Data-\/Structures-\/Simple-\/ADT-\/s/include/agendaeventos.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AGENDAEVENTOS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AGENDAEVENTOS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}evento.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAgendaEventos}{AgendaEventos}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAgendaEventos_a59e4ceee6dddee7289cd09db4ab1a862}{AgendaEventos}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAgendaEventos_af8dafeacfe0661b892164446008470fd}{AgendaEventos}}(\textcolor{keyword}{const}\ std::string\ \&ruta\_fichero);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \string~AgendaEventos();\ //\ No\ es\ necesario\ con\ array\ estático}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAgendaEventos_a51549b323331e785fd373c8ea40a3fa3}{anadirEvento}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classEvento}{Evento}}\ \&e);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAgendaEventos_ae42c55ccc20a489aec72d1a54746f450}{eliminarEventoPorNombre}}(\textcolor{keyword}{const}\ std::string\ \&nombre);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAgendaEventos_a3a8fd142ab467518cdedb888ecb2e555}{vaciarAgenda}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAgendaEventos_a7efc5ace989c74ed5a74072c60bb3957}{modificarEventoPorNombre}}(\textcolor{keyword}{const}\ std::string\ \&nombre,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classEvento}{Evento}}\ \&nuevo);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classAgendaEventos_a43e250ca9fc42fd43ec2bd62667015a2}{buscarEventosPorNombre}}(\textcolor{keyword}{const}\ std::string\ \&nombre)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classAgendaEventos_ac5fd6bfe52ac9ae3d65a10021b4d22b3}{buscarEventosPorDia}}(\textcolor{keywordtype}{int}\ dia)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAgendaEventos_a08417390b560f2a3c022d8ff227e416e}{mostrarTodos}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classAgendaEventos_aa8bab65cdf3e127decba046f321acaf0}{detectarConflictos}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classAgendaEventos_a957f28a1974fe90afee6d0ce161fff4a}{numeroEventos}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ haySolapamientoConExistentes(\textcolor{keyword}{const}\ \mbox{\hyperlink{classEvento}{Evento}}\ \&e)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ MAX\_EVENTOS\ =\ 10000;}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{classEvento}{Evento}}\ eventos\_[MAX\_EVENTOS];}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ num\_eventos\_;}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AGENDAEVENTOS\_HPP}}
+\DoxyCodeLine{00087\ }
+
+\end{DoxyCode}
