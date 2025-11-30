@@ -23,7 +23,7 @@ El sistema permite:
 - ✅ Buscar eventos por día o nombre
 - ✅ Detectar conflictos de horario
 - ✅ Vaciar completamente la agenda
-- ✅ Cargar eventos desde archivo CSV
+- ✅ Cargar eventos desde archivo txt
 
 **Características destacadas:**
 - 🚫 **Prevención de solapamientos**: No permite añadir eventos que coincidan en tiempo
