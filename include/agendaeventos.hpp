@@ -19,61 +19,69 @@
 
 
 class AgendaEventos {
-public:
-/** @brief Constructor vacío */
-AgendaEventos();
+    public:
+        /** @brief Constructor vacío */
+        AgendaEventos();
 
 
-/** @brief Constructor que carga desde fichero */
-AgendaEventos(const std::string &ruta_fichero);
+        /** @brief Constructor que carga desde fichero */
+        AgendaEventos(const std::string &ruta_fichero);
 
 
-/** @brief Destructor */
-~AgendaEventos();
+        /** @brief Destructor */
+        // ~AgendaEventos(); // No es necesario con array estático
 
 
-/** @brief Añade un evento si no solapa con los existentes.
-* @return true si se añadió, false si hubo solapamiento o error
-*/
-bool anadirEvento(const Evento &e);
+        /** @brief Añade un evento si no solapa con los existentes.
+        * @return true si se añadió, false si hubo solapamiento o error
+        */
+        bool anadirEvento(const Evento &e);
 
 
-/** @brief Elimina el primer evento cuyo nombre coincida exactamente
-* @return true si se eliminó, false si no se encontró
-*/
-bool eliminarEventoPorNombre(const std::string &nombre);
+        /** @brief Elimina el primer evento cuyo nombre coincida exactamente
+        * @return true si se eliminó, false si no se encontró
+        */
+        bool eliminarEventoPorNombre(const std::string &nombre);
+
+        /** @brief Elimina todos los eventos de la agenda (reset)
+        * @return true si se eliminó, false si no se pudo eliminar
+        */
+        void vaciarAgenda();
+        
+        /** @brief Encuentra un elemento por su nombre, y modifica el nombre, dia y horas del mismo
+        * @return true si se modifica correctamente, false si no se encontró, o algun formato no se acepta
+        */
+        bool modificarEventoPorNombre(const std::string &nombre, const Evento &nuevo);
+
+        /** @brief Busca y muestra todos los eventos con nombre exacto */
+        int buscarEventosPorNombre(const std::string &nombre) const;
 
 
-/** @brief Busca y muestra todos los eventos con nombre exacto */
-int buscarEventosPorNombre(const std::string &nombre) const;
+        /** @brief Busca y muestra todos los eventos en un día dado */
+        int buscarEventosPorDia(int dia) const;
 
 
-/** @brief Busca y muestra todos los eventos en un día dado */
-int buscarEventosPorDia(int dia) const;
+        /** @brief Muestra todos los eventos almacenados */
+        void mostrarTodos() const;
 
 
-/** @brief Muestra todos los eventos almacenados */
-void mostrarTodos() const;
+        /** @brief Detecta e imprime conflictos (pares de eventos que se solapan) */
+        void detectarConflictos() const;
 
 
-/** @brief Detecta e imprime conflictos (pares de eventos que se solapan) */
-void detectarConflictos() const;
+        /** @brief Devuelve número de eventos */
+        int numeroEventos() const;
 
 
-/** @brief Devuelve número de eventos */
-int numeroEventos() const;
+    private:
+        bool haySolapamientoConExistentes(const Evento &e) const;
 
 
-private:
-void asegurarCapacidad();
-bool haySolapamientoConExistentes(const Evento &e) const;
-
-
-Evento *eventos_; // arreglo dinámico
-int num_eventos_;
-int capacidad_;
+    static const int MAX_EVENTOS = 10000;
+    Evento eventos_[MAX_EVENTOS];
+    int num_eventos_;
 };
 
 
-#endif // AGENDAEVENTOS_H
+#endif // AGENDAEVENTOS_HPP
 

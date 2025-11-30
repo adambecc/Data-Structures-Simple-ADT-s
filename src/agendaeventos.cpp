@@ -3,95 +3,120 @@
 #include <sstream>
 #include <iostream>
 
-static const int CAP_INICIAL = 10;
 
 bool AgendaEventos::anadirEvento(const Evento &e) {
-if (!e.esValido()) return false;
-if (haySolapamientoConExistentes(e)) return false;
-asegurarCapacidad();
-eventos_[num_eventos_] = e; // copia
-++num_eventos_;
-return true;
+
+    if (!e.esValido()) return false;
+    
+    if (haySolapamientoConExistentes(e)) {
+        e.obtenerNombre();
+    }
+
+
+    if (num_eventos_ >= MAX_EVENTOS) {
+        std::cerr << "Error: Agenda llena (max " << MAX_EVENTOS << ")\n";
+        return false;
+    }
+    
+    eventos_[num_eventos_] = e; //copia
+    ++num_eventos_;
+
+    return true;
 }
 
 
 bool AgendaEventos::eliminarEventoPorNombre(const std::string &nombre) {
-for (int i = 0; i < num_eventos_; ++i) {
-if (eventos_[i].obtenerNombre() == nombre) {
-// desplazar hacia la izquierda
-for (int j = i; j < num_eventos_ - 1; ++j) eventos_[j] = eventos_[j + 1];
---num_eventos_;
-return true;
-}
-}
-return false;
+    for (int i = 0; i < num_eventos_; ++i) {
+        if (eventos_[i].obtenerNombre() == nombre) {
+            //desplazar hacia la izquierda
+            for (int j = i; j < num_eventos_ - 1; ++j) eventos_[j] = eventos_[j + 1];
+            --num_eventos_;
+            return true;
+        }
+    }
+    return false;
 }
 
+void AgendaEventos::vaciarAgenda() {
+    num_eventos_ = 0;
+}
+
+bool AgendaEventos::modificarEventoPorNombre(const std::string &nombre, 
+                                             const Evento &nuevo) {
+    for (int i = 0; i < num_eventos_; ++i) {
+        if (eventos_[i].obtenerNombre() == nombre) {
+
+            if (!nuevo.esValido()) return false;
+
+            for (int j = 0; j < num_eventos_; ++j) {
+                if (j == i) continue;
+                if (eventos_[j].seSolapaCon(nuevo)) return false;
+            }
+
+            eventos_[i] = nuevo;
+            return true;
+        }
+    }
+    return false; //no encontrado
+}
 
 int AgendaEventos::buscarEventosPorNombre(const std::string &nombre) const {
-int encontrados = 0;
-for (int i = 0; i < num_eventos_; ++i) {
-if (eventos_[i].obtenerNombre() == nombre) {
-eventos_[i].mostrar();
-++encontrados;
-}
-}
-return encontrados;
+    int encontrados = 0;
+    for (int i = 0; i < num_eventos_; ++i) {
+        if (eventos_[i].obtenerNombre() == nombre) {
+            eventos_[i].mostrar();
+            ++encontrados;
+        }
+    }
+    return encontrados;
 }
 
 
 int AgendaEventos::buscarEventosPorDia(int dia) const {
-int encontrados = 0;
-for (int i = 0; i < num_eventos_; ++i) {
-if (eventos_[i].obtenerDia() == dia) {
-eventos_[i].mostrar();
-++encontrados;
-}
-}
-return encontrados;
+    int encontrados = 0;
+    for (int i = 0; i < num_eventos_; ++i) {
+        if (eventos_[i].obtenerDia() == dia) {
+            eventos_[i].mostrar();
+            ++encontrados;
+        }
+    }
+    return encontrados;
 }
 
 
 void AgendaEventos::mostrarTodos() const {
-if (num_eventos_ == 0) {
-std::cout << "(sin eventos)" << std::endl;
-return;
-}
-for (int i = 0; i < num_eventos_; ++i) {
-eventos_[i].mostrar();
-}
+    if (num_eventos_ == 0) {
+        std::cout << "(sin eventos)" << std::endl;
+        return;
+    }
+
+    for (int i = 0; i < num_eventos_; ++i) {
+        eventos_[i].mostrar();
+    }
 }
 
 
 void AgendaEventos::detectarConflictos() const {
-bool hay = false;
-for (int i = 0; i < num_eventos_ - 1; ++i) {
-for (int j = i + 1; j < num_eventos_; ++j) {
-if (eventos_[i].seSolapaCon(eventos_[j])) {
-std::cout << "Conflicto: \"" << eventos_[i].obtenerNombre() << "\" <-> \""
-<< eventos_[j].obtenerNombre() << "\"\n";
-hay = true;
-}
-}
-}
-if (!hay) std::cout << "No hay conflictos detectados." << std::endl;
+    bool hay = false;
+    for (int i = 0; i < num_eventos_ - 1; ++i) {
+        for (int j = i + 1; j < num_eventos_; ++j) {
+            if (eventos_[i].seSolapaCon(eventos_[j])) {
+                std::cout << "Conflicto: \"" << eventos_[i].obtenerNombre() << "\" <-> \""
+                << eventos_[j].obtenerNombre() << "\"\n";
+                hay = true;
+            }
+        }
+    }
+    if (!hay) std::cout << "No hay conflictos detectados." << std::endl;
 }
 
 
 int AgendaEventos::numeroEventos() const { return num_eventos_; }
 
-AgendaEventos::AgendaEventos()
-    : eventos_(nullptr), num_eventos_(0), capacidad_(0) {
-
-    capacidad_ = CAP_INICIAL;
-    eventos_ = new Evento[capacidad_];
+AgendaEventos::AgendaEventos() : num_eventos_(0) {
 }
 
-AgendaEventos::AgendaEventos(const std::string &ruta_fichero)
-    : eventos_(nullptr), num_eventos_(0), capacidad_(0) {
-
-    capacidad_ = CAP_INICIAL;
-    eventos_ = new Evento[capacidad_];
+AgendaEventos::AgendaEventos(const std::string &ruta_fichero) : num_eventos_(0) {
 
     std::ifstream ifs(ruta_fichero.c_str());
     if (!ifs) {
@@ -120,25 +145,6 @@ AgendaEventos::AgendaEventos(const std::string &ruta_fichero)
         if (e.esValido())
             anadirEvento(e);
     }
-}
-
-AgendaEventos::~AgendaEventos() {
-    delete[] eventos_;
-}
-
-void AgendaEventos::asegurarCapacidad() {
-    if (num_eventos_ < capacidad_)
-        return;
-
-    int nueva = capacidad_ * 2;
-    Evento *nuevo = new Evento[nueva];
-
-    for (int i = 0; i < num_eventos_; i++)
-        nuevo[i] = eventos_[i];
-
-    delete[] eventos_;
-    eventos_ = nuevo;
-    capacidad_ = nueva;
 }
 
 bool AgendaEventos::haySolapamientoConExistentes(const Evento &e) const {

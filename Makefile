@@ -14,7 +14,7 @@ CXX = g++
 CXXFLAGS = -Wall -std=c++11 -I$(INC)
 
 # Ejecutable
-TARGET = programa
+TARGET = main
 
 all: $(TARGET)
 

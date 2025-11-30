@@ -20,50 +20,50 @@
 
 
 class Evento {
-public:
-/** @brief Constructor por defecto (evento inválido hasta asignar valores) */
-Evento();
+    public:
+        /** @brief Constructor por defecto (evento inválido hasta asignar valores) */
+        Evento();
 
 
-/** @brief Constructor por parámetros */
-Evento(const std::string &nombre, int dia, double inicio, double fin);
+        /** @brief Constructor por parámetros */
+        Evento(const std::string &nombre, int dia, double inicio, double fin);
 
 
-// Getters
-std::string obtenerNombre() const;
-int obtenerDia() const;
-double obtenerHoraInicio() const;
-double obtenerHoraFin() const;
+        //getters
+        std::string obtenerNombre() const;
+        int obtenerDia() const;
+        double obtenerHoraInicio() const;
+        double obtenerHoraFin() const;
 
 
-// Setters (precondiciones documentadas en .cpp)
-void cambiarNombre(const std::string &nuevo);
-void cambiarDia(int dia);
-void cambiarHoraInicio(double h);
-void cambiarHoraFin(double h);
+        //setters (precondiciones documentadas en .cpp)
+        void cambiarNombre(const std::string &nuevo);
+        void cambiarDia(int dia);
+        void cambiarHoraInicio(double h);
+        void cambiarHoraFin(double h);
 
 
-/**
-* @brief Comprueba si este evento se solapa con otro
-* @param otro Evento a comparar
-* @return true si se solapan (mismo dia y franjas horarias intersectan)
-*/
-bool seSolapaCon(const Evento &otro) const;
+        /**
+        * @brief Comprueba si este evento se solapa con otro
+        * @param otro Evento a comparar
+        * @return true si se solapan (mismo dia y franjas horarias intersectan)
+        */
+        bool seSolapaCon(const Evento &otro) const;
 
 
-/** @brief Mostrar información (formato legible) */
-void mostrar() const;
+        /** @brief Mostrar información (formato legible) */
+        void mostrar() const;
 
 
-/** @brief Comprueba si el evento es válido según el invariante */
-bool esValido() const;
+        /** @brief Comprueba si el evento es válido según el invariante */
+        bool esValido() const;
 
 
-private:
-std::string nombre_;
-int dia_; // 1..7
-double hora_inicio_;
-double hora_fin_;
+    private:
+        std::string nombre_;
+        int dia_;
+        double hora_inicio_;
+        double hora_fin_;
 };
 
 

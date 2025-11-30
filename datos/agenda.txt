@@ -3,3 +3,25 @@ Laboratorio de Física,1,11.0,13.0
 Tutoría con María,2,10.0,11.0
 Clase de Programación,3,9.0,11.0
 Reunión de grupo,3,10.5,12.0
+Clase de ED,1,14.0,16.0
+Entrenamiento de baloncesto,1,18.0,20.0
+Consulta médica,2,8.0,9.0
+Club de musica,2,16.0,17.5
+Laboratorio de SI,3,14.0,16.0
+Seminario de DDSI,4,9.0,11.0
+Reunión de proyecto DDSI,4,11.5,12.5
+Práctica de ciberseguridad,4,17.0,19.0
+Clase de Historia,5,10.0,12.0
+Taller de música,5,15.0,18.0
+Churros con Dani,6,9.0,10.0
+Gimnasio,6,18.0,19.0
+Excursión al servidor del Hospital,7,10.0,13.0
+Videollamada familiar,7,19.0,20.0
+Reunión improvisada,1,10.0,12.0
+Revisión de proyecto,2,10.0,12.0
+Clase de Bases de Datos,3,10.0,12.0
+Asesoría de Programación,3,15.0,17.0
+Reunión de preparación de examen,4,10.0,11.0
+Práctica avanzada de redes,4,17.5,19.5
+Revisión del servidor,7,12.0,14.0
+Tarde de cine,7,12.5,15.0
