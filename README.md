@@ -1,4 +1,4 @@
-**Sistema de gestión de eventos con detección de conflictos horarios**
+# **Sistema de gestión de eventos con detección de conflictos horarios**
 
 </div>
 
