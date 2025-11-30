@@ -107,11 +107,15 @@ void AgendaEventos::detectarConflictos() const {
             }
         }
     }
-    if (!hay) std::cout << "No hay conflictos detectados." << std::endl;
+    if (!hay) {
+        std::cout << "No hay conflictos detectados." << std::endl;
+    }
 }
 
 
-int AgendaEventos::numeroEventos() const { return num_eventos_; }
+int AgendaEventos::numeroEventos() const { 
+    return num_eventos_; 
+}
 
 AgendaEventos::AgendaEventos() : num_eventos_(0) {
 }
@@ -126,7 +130,9 @@ AgendaEventos::AgendaEventos(const std::string &ruta_fichero) : num_eventos_(0) 
 
     std::string linea;
     while (std::getline(ifs, linea)) {
-        if (linea.empty()) continue;
+        if (linea.empty()) {
+            continue;
+        }
 
         std::stringstream ss(linea);
         std::string nombre, dia_s, inicio_s, fin_s;
@@ -142,15 +148,18 @@ AgendaEventos::AgendaEventos(const std::string &ruta_fichero) : num_eventos_(0) 
 
         Evento e(nombre, dia, inicio, fin);
 
-        if (e.esValido())
+        if (e.esValido()){
             anadirEvento(e);
+        }
     }
 }
 
 bool AgendaEventos::haySolapamientoConExistentes(const Evento &e) const {
-    for (int i = 0; i < num_eventos_; i++)
-        if (eventos_[i].seSolapaCon(e))
+    for (int i = 0; i < num_eventos_; i++){
+        if (eventos_[i].seSolapaCon(e)){
             return true;
+        }
+    }
 
     return false;
 }

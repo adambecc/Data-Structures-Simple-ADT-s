@@ -46,9 +46,10 @@ int main() {
     while (opt != 0) {
         mostrarMenu();
 
-        if (!(std::cin >> opt))
+        if (!(std::cin >> opt)){
             break;
-
+        }
+            
         std::cin.ignore(); // limpiar newline
 
         if (opt == 1) {
@@ -117,10 +118,11 @@ int main() {
 
             Evento nuevo(nuevoNombre, nuevoDia, nuevoInicio, nuevoFin);
 
-            if (agenda.modificarEventoPorNombre(nombre, nuevo))
+            if (agenda.modificarEventoPorNombre(nombre, nuevo)){
                 std::cout << "Evento modificado.\n";
-            else
+            }else{
                 std::cout << "No se pudo modificar (no encontrado o hay solapamiento).\n";
+            }
 
         } else if (opt == 6) {
             agenda.detectarConflictos();
@@ -142,8 +144,7 @@ int main() {
             std::cin >> r;
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-            if (r == 's' || r == 'S')
-            {
+            if (r == 's' || r == 'S'){
                 agenda.vaciarAgenda();
                 std::cout << "Agenda vaciada.\n";
             }else{

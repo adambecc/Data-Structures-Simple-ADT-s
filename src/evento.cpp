@@ -42,17 +42,21 @@ void Evento::cambiarHoraFin(double h) {
 }
 
 bool Evento::seSolapaCon(const Evento &otro) const {
-    if (!esValido() || !otro.esValido()) 
+    if (!esValido() || !otro.esValido()) {
         return false;
+    }
 
-    if (dia_ != otro.dia_) 
+    if (dia_ != otro.dia_) {
         return false;
+    }
 
-    if (hora_fin_ <= otro.hora_inicio_) 
+    if (hora_fin_ <= otro.hora_inicio_) {
         return false;
+    }
 
-    if (otro.hora_fin_ <= hora_inicio_) 
+    if (otro.hora_fin_ <= hora_inicio_) {
         return false;
+    }
 
     return true;
 }
@@ -71,11 +75,13 @@ void Evento::mostrar() const {
 }
 
 bool Evento::esValido() const {
-    if (dia_ < 1 || dia_ > 7) 
+    if (dia_ < 1 || dia_ > 7) {
         return false;
-
-    if (!(hora_inicio_ < hora_fin_)) 
+    }
+        
+    if (!(hora_inicio_ < hora_fin_)) {
         return false;
+    }
 
     return true;
 }
